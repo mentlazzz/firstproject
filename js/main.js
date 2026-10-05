@@ -79,6 +79,38 @@
   });
   addEventListener('resize', resize);
 
+  /* ---------- Nav background after the hero ---------- */
+  const nav = $('.nav');
+  const heroEl = $('.hero');
+  const navState = () => nav.classList.toggle('is-solid', heroEl.getBoundingClientRect().bottom < 80 || scrollY > innerHeight * 2.6);
+  addEventListener('scroll', navState, { passive: true });
+  navState();
+
+  /* ---------- Program buttons prefill the form ---------- */
+  const select = $('#program');
+  document.querySelectorAll('[data-program]').forEach((b) => b.addEventListener('click', () => { select.value = b.dataset.program; }));
+
+  /* ---------- Form → e-mail to rezervace@carea.cz ---------- */
+  const form = $('#form');
+  const status = $('#form-status');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach((f) => {
+      const bad = !f.value.trim() || (f.type === 'email' && !/^\S+@\S+\.\S+$/.test(f.value));
+      f.classList.toggle('is-invalid', bad);
+      if (bad) ok = false;
+    });
+    if (!ok) { status.textContent = 'Vyplňte prosím jméno, platný e-mail a zprávu.'; return; }
+    const d = Object.fromEntries(new FormData(form));
+    const body = [`Jméno: ${d.jmeno}`, `E-mail: ${d.email}`, d.telefon && `Telefon: ${d.telefon}`, d.program && `Program: ${d.program}`, '', d.zprava]
+      .filter((l) => l !== undefined && l !== false && l !== null).join('\n');
+    const subject = `Poptávka${d.program ? ' — ' + d.program : ''} (${d.jmeno})`;
+    location.href = `mailto:rezervace@carea.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    status.textContent = 'Otevíráme váš e-mail s připravenou zprávou…';
+  });
+  $('#year').textContent = new Date().getFullYear();
+
   if (!window.gsap || reduce) return;
   gsap.registerPlugin(ScrollTrigger);
 
@@ -110,4 +142,47 @@
   })
     .to(frame, { i: FRAMES - 1, ease: 'none', duration: 1, snap: 'i', onUpdate: () => { current = frame.i; draw(); } }, 0)
     .to('.hero__hint', { opacity: 0, duration: .06 }, 0);
+
+
+  /* ---------- Sections ---------- */
+  const once = (trigger, start = 'top 85%') => ({ trigger, start, once: true });
+
+  gsap.utils.toArray('.sec__head, .split__body, .fleet__body, .contact__info, .statement__in').forEach((el) => {
+    gsap.from(el.children, { opacity: 0, y: 40, duration: 1.3, stagger: .1, ease: 'expo.out', scrollTrigger: once(el) });
+  });
+  gsap.utils.toArray('.kicker__no').forEach((el) => gsap.from(el, { opacity: 0, x: -12, duration: 1, scrollTrigger: once(el, 'top 90%') }));
+
+  ScrollTrigger.batch('.reveal', {
+    start: 'top 88%', once: true,
+    onEnter: (b) => gsap.from(b, { opacity: 0, y: 40, duration: 1.2, stagger: .12, ease: 'expo.out' }),
+  });
+
+  // Images open like a curtain, then drift slowly
+  gsap.utils.toArray('.reveal-img, .detailing__img').forEach((fig) => {
+    const img = fig.querySelector('img');
+    gsap.timeline({ scrollTrigger: once(fig, 'top 80%') })
+      .from(fig, { clipPath: 'inset(0 0 100% 0)', duration: 1.6, ease: 'expo.inOut' })
+      .from(img, { scale: 1.25, duration: 2, ease: 'expo.out' }, '<.2');
+    gsap.to(img, { yPercent: -6, ease: 'none', scrollTrigger: { trigger: fig, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  // Prices count up
+  gsap.utils.toArray('[data-price]').forEach((el) => {
+    const end = +el.dataset.price, o = { v: end * .6 };
+    gsap.to(o, { v: end, duration: 1.6, ease: 'expo.out', scrollTrigger: once(el, 'top 92%'),
+      onUpdate: () => { el.textContent = Math.round(o.v / 10) * 10 >= end ? end.toLocaleString('cs-CZ') : (Math.round(o.v / 10) * 10).toLocaleString('cs-CZ'); } });
+  });
+
+  // Statement: slow parallax + headline lines
+  gsap.to('.statement__bg', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.statement', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.from('.st-line', { yPercent: 60, opacity: 0, duration: 1.6, stagger: .15, ease: 'expo.out', scrollTrigger: once('.statement', 'top 60%') });
+
+  // Fleet: big 20 %
+  const c = { v: 0 }, cEl = document.querySelector('[data-count]');
+  gsap.timeline({ scrollTrigger: once('.fleet', 'top 70%') })
+    .from('.fleet__num', { opacity: 0, x: -60, duration: 1.6, ease: 'expo.out' })
+    .to(c, { v: 20, duration: 1.8, ease: 'expo.out', onUpdate: () => { cEl.textContent = Math.round(c.v); } }, '<');
+
+  gsap.from('.quote', { opacity: 0, y: 40, duration: 1.3, stagger: .15, ease: 'expo.out', scrollTrigger: once('.quotes') });
+  gsap.from('.footer__big', { opacity: 0, y: 60, letterSpacing: '.5em', duration: 1.8, ease: 'expo.out', scrollTrigger: once('.footer', 'top 90%') });
 })();

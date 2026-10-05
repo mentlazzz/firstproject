@@ -52,6 +52,12 @@
   --ease: var(--p-ease-out);
   --dur: 400ms;
 
+  --c-surface: var(--p-ink-800);
+  --c-line-faint: rgba(242, 242, 240, .08);
+  --t-title: clamp(2rem, 1rem + 3vw, 4rem);
+  --t-lead: clamp(.98rem, .9rem + .3vw, 1.12rem);
+  --sec-y: clamp(96px, 12vw, 180px);
+
   /* 3. Component */
   --nav-h: 96px;
   --nav-link-c: var(--c-text-soft);
@@ -60,4 +66,8 @@
   --btn-hover-bg: var(--c-text);
   --btn-hover-fg: var(--c-bg-deep);
   --hero-photo-filter: grayscale(1);
+  --img-filter: grayscale(1) contrast(1.05);
+  --field-bd: var(--c-line);
+  --field-bd-focus: var(--c-text);
+  --wa-bg: #25d366;
 }
