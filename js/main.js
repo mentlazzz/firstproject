@@ -12,7 +12,7 @@
   });
 
   /* ---------- Wash sequence (frames/ from the video) ---------- */
-  const FRAMES = 193;
+  const FRAMES = window.CAREA_FRAMES ? window.CAREA_FRAMES.length : 193;
   const canvas = $('#wash');
   const ctx = canvas.getContext('2d');
   const small = matchMedia('(max-width: 900px)').matches;
