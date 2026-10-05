@@ -59,6 +59,40 @@ ul { list-style: none; }
 .hero__marks span { font-size: var(--t-micro); letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--c-text-muted); }
 
 /* ---------- Responsive ---------- */
+/* ---------- Review fan carousel (port of card-fan-carousel) ---------- */
+.fan { --card-w: 20rem; --card-h: 27rem; --stage-h: calc(var(--card-h) + 10rem); position: relative; overflow-x: clip; border-top: 1px solid var(--c-line); padding-top: clamp(32px, 4vw, 56px); }
+.fan__stage { position: relative; height: var(--stage-h); }
+.fan-card { position: absolute; left: calc(50% - var(--card-w) / 2); top: 3rem; width: var(--card-w); height: var(--card-h); opacity: 0; will-change: transform;
+  display: flex; flex-direction: column; padding: 28px 26px 24px; background: linear-gradient(180deg, var(--c-surface), var(--c-bg-deep)); border: 1px solid var(--c-line); border-radius: 22px;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.04); color: var(--c-text); text-align: left; overflow: hidden; }
+.fan-card.is-center { border-color: var(--c-line-strong); }
+.fan-card__top { display: flex; justify-content: space-between; align-items: center; }
+.fan-card__stars { letter-spacing: .28em; font-size: .78rem; }
+.fan-card__g { font-size: .6rem; letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--c-text-faint); }
+.fan-card__mark { font-size: 4.2rem; line-height: .6; font-weight: 300; font-style: italic; color: var(--c-text-faint); margin: 26px 0 6px; }
+.fan-card__text { flex: 1; font-weight: 300; font-size: .9rem; line-height: 1.65; color: var(--c-text-soft); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 11; -webkit-box-orient: vertical; }
+.fan-card__text--short { font-size: 1.15rem; line-height: 1.55; color: var(--c-text); }
+.fan-card__who { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--c-line); display: flex; align-items: center; gap: 12px; }
+.fan-card__av { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--c-line-strong); font-size: .85rem; }
+.fan-card__who b { display: block; font-weight: 500; font-size: var(--t-micro); letter-spacing: var(--track-wide); text-transform: uppercase; }
+.fan-card__who small { font-size: .62rem; color: var(--c-text-faint); letter-spacing: .04em; }
+.fan-card--score { align-items: center; justify-content: center; text-align: center; gap: 14px; }
+.fan-card--score .fan-card__big { font-weight: 200; font-size: 6rem; line-height: 1; }
+.fan-card--score p { font-size: var(--t-small); color: var(--c-text-muted); line-height: 1.7; max-width: 15rem; }
+.fan-card--cta { align-items: center; justify-content: center; text-align: center; gap: 22px; background: var(--c-bg-deep); border-style: dashed; }
+.fan-card--cta h3 { font-weight: 300; font-size: 1.6rem; text-transform: uppercase; line-height: 1.15; }
+.fan-card--cta h3 em { color: var(--c-text-muted); }
+.fan__nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 8px; }
+.fan__nav[hidden] { display: none; }
+.fan__arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--c-line); background: rgba(255,255,255,.04); color: var(--c-text-soft); display: grid; place-items: center; cursor: pointer; transition: border-color var(--dur), color var(--dur); }
+.fan__arrow:hover { border-color: var(--c-line-strong); color: var(--c-text); }
+.fan__arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fan__dots { display: flex; gap: 8px; }
+.fan__dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--c-line); transition: background var(--dur), transform var(--dur); }
+.fan__dots span.is-on { background: var(--c-text); transform: scale(1.3); }
+@media (max-width: 1024px) { .fan { --card-w: 17rem; --card-h: 24rem; } }
+@media (max-width: 640px)  { .fan { --card-w: 15.5rem; --card-h: 23rem; --stage-h: calc(var(--card-h) + 6rem); } .fan-card { padding: 22px 20px 18px; } .fan-card__text { -webkit-line-clamp: 10; font-size: .84rem; } }
+
 @media (max-width: 1000px) {
   .nav__links { display: none; }
   .nav__icon { margin-left: auto; }
@@ -186,16 +220,6 @@ h3 { margin: 0; }
 .fleet__body .lead { margin-top: 22px; }
 
 /* ---------- Reviews ---------- */
-.score { display: grid; grid-template-columns: auto 1fr; column-gap: 20px; align-items: center; max-width: 380px; }
-.score b { grid-row: span 2; font-weight: 200; font-size: 4.4rem; line-height: 1; }
-.score span { letter-spacing: .3em; font-size: .9rem; }
-.score small { font-size: var(--t-micro); color: var(--c-text-faint); line-height: 1.6; }
-.quotes { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(40px, 6vw, 120px); border-top: 1px solid var(--c-line); padding-top: clamp(40px, 5vw, 72px); }
-.quote { margin: 0; }
-.quote blockquote { margin: 0; font-weight: 300; font-size: clamp(1.15rem, .95rem + .7vw, 1.6rem); line-height: 1.6; color: var(--c-text); }
-.quote figcaption { margin-top: 28px; display: flex; flex-direction: column; gap: 4px; }
-.quote figcaption b { font-weight: 500; font-size: var(--t-small); letter-spacing: var(--track-wide); text-transform: uppercase; }
-.quote figcaption span { font-size: var(--t-micro); color: var(--c-text-faint); letter-spacing: .06em; }
 .reviews__links { margin-top: clamp(48px, 6vw, 80px); display: flex; gap: 40px; flex-wrap: wrap; }
 
 /* ---------- Contact ---------- */
@@ -241,7 +265,7 @@ h3 { margin: 0; }
   .prog { grid-template-columns: 1fr auto; }
   .prog__items { grid-column: 1 / -1; grid-row: 2; }
   .prog__price { grid-row: 1; grid-column: 2; }
-  .detailing, .sec--split, .fleet, .contact, .quotes { grid-template-columns: 1fr; }
+  .detailing, .sec--split, .fleet, .contact { grid-template-columns: 1fr; }
   .sec--flip .split__img { order: 0; }
   .split__img { position: relative; top: 0; aspect-ratio: 16 / 10; }
   .addons { grid-template-columns: 1fr; }
@@ -253,8 +277,8 @@ h3 { margin: 0; }
   .info > div { grid-template-columns: 1fr; gap: 4px; }
   .addons li { flex-direction: column; gap: 10px; }
   .footer__grid { grid-template-columns: 1fr; }
-  .score b { font-size: 3.4rem; }
-  .map { height: 300px; }
+    .map { height: 300px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition-duration: 1ms !important; } }
+.fleet > *, .contact > *, .sec--split > *, .detailing > * { min-width: 0; }

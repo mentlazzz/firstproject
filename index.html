@@ -219,22 +219,17 @@
 
   <!-- ================= RECENZE ================= -->
   <section class="sec reviews" id="recenze">
-    <header class="sec__head sec__head--row">
-      <div>
-        <p class="kicker"><span class="kicker__no">06</span>Hodnocení zákazníků</p>
-        <h2 class="sec__title">Co o nás říkají <em>na Google</em></h2>
-      </div>
-      <p class="score"><b>5,0</b><span>★★★★★</span><small>Reálné zkušenosti zákazníků po otevření naší provozovny v Kralupech nad Vltavou.</small></p>
+    <header class="sec__head">
+      <p class="kicker"><span class="kicker__no">06</span>Hodnocení zákazníků</p>
+      <h2 class="sec__title">Co o nás říkají <em>na Google</em></h2>
     </header>
-    <div class="quotes">
-      <figure class="quote">
-        <blockquote>„Škoda, že maximum je 5*. Auto si pán převzal ještě před otvírací dobou, vše s námi probral a nabídl nejvhodnější program. Za pár hodin bylo auto kompletně vyčištěno, interiér příjemně a nevtíravě voní – dostali jsme na výběr velkou škálu parfemace interiéru, což mě mile překvapilo. Při předání auta s námi pán ještě jednou prošel příjmový formulář, abychom měli jistotu, že je hotové opravdu vše. Rádi se budeme vracet 🙂“</blockquote>
-        <figcaption><b>Martina Párová</b><span>15. září 2026 · ověřená recenze Google</span></figcaption>
-      </figure>
-      <figure class="quote">
-        <blockquote>„Vřele doporučuji firmu Carea ruční mytí aut v Kralupech nad Vltavou. Velmi příjemná obsluha. Možnost výběru vůní. Velmi přijatelné ceny.“</blockquote>
-        <figcaption><b>Karel Vondrák</b><span>18. září 2026 · ověřená recenze Google</span></figcaption>
-      </figure>
+    <div class="fan" id="fan" aria-roledescription="carousel" aria-label="Recenze zákazníků">
+      <div class="fan__stage" id="fan-stage"></div>
+      <div class="fan__nav" id="fan-nav" hidden>
+        <button class="fan__arrow" data-dir="left" aria-label="Předchozí recenze"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="fan__dots" id="fan-dots"></div>
+        <button class="fan__arrow" data-dir="right" aria-label="Další recenze"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
     </div>
     <div class="reviews__links">
       <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=CAREA+U+D%C3%BDh%C3%A1rny+1162+Kralupy+nad+Vltavou" target="_blank" rel="noopener">Napsat recenzi na Google</a>
@@ -304,6 +299,7 @@
 
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/reviews.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
