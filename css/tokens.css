@@ -1,160 +1,63 @@
-/* ==========================================================================
-   CAREA — design tokens
-   Three layers (ui-ux-pro-max / design-system skill):
-   Primitive (raw values) → Semantic (purpose) → Component (per component).
-   styles.css uses only semantic + component tokens.
-   ========================================================================== */
+/* CAREA — design tokens (ui-ux-pro-max: primitive → semantic → component) */
 
-@font-face {
-  font-family: "Archivo";
-  src: url(../fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations");
-  font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Archivo";
-  src: url(../fonts/archivo-latin-ext-wdth-normal.woff2) format("woff2-variations");
-  font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Manrope";
-  src: url(../fonts/manrope-latin-wght-normal.woff2) format("woff2-variations");
-  font-weight: 200 800; font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Manrope";
-  src: url(../fonts/manrope-latin-ext-wght-normal.woff2) format("woff2-variations");
-  font-weight: 200 800; font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(../fonts/jost-latin-wght-normal.woff2) format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(../fonts/jost-latin-ext-wght-normal.woff2) format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20C0, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Jost"; font-style: italic; font-weight: 100 900; font-display: swap;
+  src: url(../fonts/jost-latin-wght-italic.woff2) format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Jost"; font-style: italic; font-weight: 100 900; font-display: swap;
+  src: url(../fonts/jost-latin-ext-wght-italic.woff2) format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20C0, U+2C60-2C7F, U+A720-A7FF; }
 
 :root {
-  /* ---------- 1. PRIMITIVE ---------- */
-  --p-ink-1000: #050506;
-  --p-ink-950: #08080a;
-  --p-ink-900: #0e0e11;
-  --p-ink-850: #131317;
-  --p-ink-800: #18181d;
-  --p-ink-700: #222228;
-  --p-ink-600: #2e2e36;
-  --p-grey-500: #6f6f7a;
-  --p-grey-400: #94949f;
-  --p-grey-300: #bdbdc5;
-  --p-white: #f5f2eb;
+  /* 1. Primitive */
+  --p-black: #060606;
+  --p-ink-900: #0b0b0c;
+  --p-ink-800: #141416;
+  --p-grey-700: #3a3a3d;
+  --p-grey-500: #77777b;
+  --p-grey-400: #9a9a9e;
+  --p-grey-300: #bcbcc0;
+  --p-white: #f2f2f0;
+  --p-red-500: #e1251b;
 
-  --p-gold-200: #f3e2b8;
-  --p-gold-300: #e6c886;
-  --p-gold-400: #d6ae62;
-  --p-gold-500: #c39a4c;
-  --p-gold-600: #9f7a34;
-  --p-gold-700: #6e5322;
+  --p-font: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --p-ease-out: cubic-bezier(.22, 1, .36, 1);
 
-  --p-green-500: #25d366;
-  --p-red-500: #e5484d;
-
-  --p-font-display: "Archivo", "Arial Black", system-ui, sans-serif;
-  --p-font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
-
-  --p-r-sm: 6px;
-  --p-r-md: 10px;
-  --p-r-lg: 16px;
-  --p-r-full: 999px;
-
-  --p-ease: cubic-bezier(.2, .9, .2, 1);
-
-  /* ---------- 2. SEMANTIC ---------- */
-  --c-bg: var(--p-ink-950);
-  --c-bg-deep: var(--p-ink-1000);
-  --c-surface: var(--p-ink-900);
-  --c-surface-2: var(--p-ink-850);
-  --c-surface-3: var(--p-ink-800);
-  --c-surface-hover: var(--p-ink-700);
-  --c-line: rgba(214, 174, 98, .16);
-  --c-line-strong: rgba(214, 174, 98, .42);
-  --c-line-neutral: rgba(245, 242, 235, .07);
-
+  /* 2. Semantic */
+  --c-bg: var(--p-ink-900);
+  --c-bg-deep: var(--p-black);
+  --c-light: rgba(255, 255, 255, .07);
   --c-text: var(--p-white);
-  --c-text-2: var(--p-grey-300);
-  --c-text-3: var(--p-grey-400);
-  --c-text-4: var(--p-grey-500);
-  --c-on-gold: var(--p-ink-1000);
+  --c-text-soft: var(--p-grey-300);
+  --c-text-muted: var(--p-grey-400);
+  --c-text-faint: var(--p-grey-500);
+  --c-line: rgba(242, 242, 240, .14);
+  --c-line-strong: rgba(242, 242, 240, .7);
+  --c-accent: var(--p-red-500);
 
-  --c-gold: var(--p-gold-400);
-  --c-gold-soft: var(--p-gold-300);
-  --c-gold-pale: var(--p-gold-200);
-  --c-gold-deep: var(--p-gold-600);
-  --c-gold-tint: rgba(214, 174, 98, .08);
-  --c-gold-glow: rgba(214, 174, 98, .22);
-  --c-star: var(--p-gold-400);
-  --c-whatsapp: var(--p-green-500);
-  --c-error: var(--p-red-500);
+  --f-base: var(--p-font);
+  --t-micro: .66rem;
+  --t-small: .78rem;
+  --t-body: .9rem;
+  --t-display: clamp(2.3rem, 1rem + 3.8vw, 4.5rem);
+  --track-wide: .22em;
+  --track-xwide: .38em;
 
-  --g-gold: linear-gradient(135deg, var(--p-gold-200) 0%, var(--p-gold-400) 38%, var(--p-gold-600) 100%);
-  --g-gold-text: linear-gradient(180deg, var(--p-gold-200) 0%, var(--p-gold-400) 55%, var(--p-gold-600) 100%);
-  --g-panel: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,0) 40%);
+  --gutter: clamp(20px, 6vw, 96px);
+  --ease: var(--p-ease-out);
+  --dur: 400ms;
 
-  --f-display: var(--p-font-display);
-  --f-body: var(--p-font-body);
-  --stretch-wide: 118%;
-  --stretch-normal: 100%;
-
-  --t-xs: .72rem;
-  --t-sm: .84rem;
-  --t-base: .95rem;
-  --t-md: 1.05rem;
-  --t-lg: 1.25rem;
-  --t-xl: clamp(1.35rem, 1.1rem + .8vw, 1.7rem);
-  --t-2xl: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem);
-  --t-hero: clamp(2.6rem, 1.4rem + 4.6vw, 5.6rem);
-  --t-brand: clamp(3rem, 1.2rem + 5.2vw, 6.4rem);
-
-  --track-caps: .16em;
-
-  --gap: clamp(14px, 1.6vw, 22px);
-  --gutter: clamp(16px, 3.5vw, 40px);
-  --sec-y: clamp(28px, 4vw, 52px);
-  --container: 1320px;
-
-  --r-sm: var(--p-r-sm);
-  --r-md: var(--p-r-md);
-  --r-lg: var(--p-r-lg);
-  --r-full: var(--p-r-full);
-
-  --ease: var(--p-ease);
-  --dur: 280ms;
-
-  --sh-card: 0 30px 60px -30px rgba(0, 0, 0, .9);
-  --sh-gold: 0 0 0 1px var(--c-line-strong), 0 18px 50px -18px var(--c-gold-glow);
-
-  /* ---------- 3. COMPONENT ---------- */
-  --hdr-h: 78px;
-  --hdr-bg: rgba(8, 8, 10, .78);
-
-  --btn-h: 50px;
-  --btn-h-sm: 42px;
-  --btn-gold-bg: var(--g-gold);
-  --btn-gold-fg: var(--c-on-gold);
-  --btn-line-bd: var(--c-line-strong);
-
-  --panel-bg: var(--g-panel), var(--c-surface);
-  --panel-bd: var(--c-line);
-  --panel-r: var(--r-lg);
-  --panel-pad: clamp(18px, 2.2vw, 30px);
-
-  --card-bg: var(--c-surface-2);
-  --card-bd: var(--c-line-neutral);
-  --card-bd-hover: var(--c-line-strong);
-  --card-r: var(--r-md);
-
-  --price-c: var(--c-gold-soft);
-  --icon-c: var(--c-gold);
-
-  --ph-bg: radial-gradient(80% 70% at 70% 20%, rgba(214, 174, 98, .14), transparent 60%),
-           linear-gradient(160deg, var(--p-ink-700), var(--p-ink-1000));
-
-  --fld-bg: var(--c-bg-deep);
-  --fld-bd: var(--p-ink-600);
-  --fld-bd-focus: var(--c-gold);
+  /* 3. Component */
+  --nav-h: 96px;
+  --nav-link-c: var(--c-text-soft);
+  --btn-bd: var(--c-line-strong);
+  --btn-fg: var(--c-text);
+  --btn-hover-bg: var(--c-text);
+  --btn-hover-fg: var(--c-bg-deep);
+  --hero-photo-filter: grayscale(1) contrast(1.15) brightness(.6);
 }

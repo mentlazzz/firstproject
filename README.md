@@ -1,13 +1,9 @@
 # CAREA — web
 
-Statický web pro CAREA (ruční automyčka a čištění interiérů, Kralupy nad Vltavou).
+Úvodní část (hero) webu CAREA — ruční automyčka a čištění interiérů, Kralupy nad Vltavou.
 
-- `index.html` — celý web (otevřete v prohlížeči)
-- `css/tokens.css` — design tokeny (primitive → semantic → component)
+- `index.html` — stránka
+- `css/tokens.css` — design tokeny (primitive → semantic → component), písmo Jost
 - `css/styles.css` — vzhled
-- `js/main.js` — interakce (kalendář, záložky, před/po) a GSAP animace
-- `js/vendor/` — GSAP 3 + ScrollTrigger + SplitText (lokálně, bez CDN)
-- `fonts/` — Archivo + Manrope (lokálně)
-- `img/` — sem nahrajte fotky, viz `img/README.md`
-
-Barvy se mění na jednom místě v `css/tokens.css` (např. zlatou za červenou CAREA: `--color-accent`).
+- `js/main.js` — úvodní animace (GSAP)
+- `img/hero-bw.jpg` — hlavní fotka (dočasně z carea.cz, nahraďte vlastní fotkou tmavého auta)
