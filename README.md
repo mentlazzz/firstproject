@@ -5,5 +5,5 @@
 - `index.html` — stránka
 - `css/tokens.css` — design tokeny (primitive → semantic → component), písmo Jost
 - `css/styles.css` — vzhled
-- `js/main.js` — úvodní animace (GSAP)
-- `img/hero.jpg` — hlavní fotka úvodu
+- `js/main.js` — úvodní animace + animace mytí podle scrollu (GSAP ScrollTrigger)
+- `frames/lg`, `frames/sm` — snímky videa mytí auta (přehrávají se podle scrollu)
