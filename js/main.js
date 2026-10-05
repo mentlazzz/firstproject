@@ -129,16 +129,15 @@
       html.push(`<figure class="fan-card" style="margin:0"><div class="fan-card__top"><span class="fan-card__stars">${'★'.repeat(r.stars || 5)}</span><span class="fan-card__g">Google</span></div>
         <span class="fan-card__mark" aria-hidden="true">“</span>
         <blockquote class="fan-card__text${short ? ' fan-card__text--short' : ''}" style="margin:0">${esc(r.text)}</blockquote>
-        <figcaption class="fan-card__who"><span class="fan-card__av">${esc(r.name[0])}</span><span><b>${esc(r.name)}</b><small>${esc(r.date)} · ověřená recenze</small></span></figcaption></figure>`);
+        <figcaption class="fan-card__who"><span class="fan-card__av">${esc(r.name[0])}</span><span><b>${esc(r.name)}</b><small>${r.date ? esc(r.date) + ' · ' : ''}ověřená recenze Google</small></span></figcaption></figure>`);
     });
     html.push(`<a class="fan-card fan-card--cta" href="${GOOGLE}" target="_blank" rel="noopener"><span class="fan-card__g">Byli jste u nás?</span><h3>Napište nám <em>recenzi</em></h3><span class="link">Google recenze</span></a>`);
-    // keep the longest review in the middle when there are few cards
-    if (html.length === 4) html.splice(1, 2, html[2], html[1]);
     stage.innerHTML = html.join('');
 
     const cards = [...stage.querySelectorAll('.fan-card')];
     const total = cards.length;
-    const MAX = 7, HALF = 3;
+    // phones show 3 cards at a time and page through the rest
+    const MAX = innerWidth < 768 ? 3 : 7, HALF = MAX >> 1;
     const paged = total > MAX;
     const FAN = [
       { rot: -21, scale: .7756, x: -30, y: 7.3, z: 1 }, { rot: -14, scale: .8498, x: -22, y: 4, z: 2 },
@@ -149,7 +148,7 @@
     const wMult = () => { const w = innerWidth; return w < 480 ? .28 : w < 640 ? .38 : w < 768 ? .5 : w < 1024 ? .75 : 1; };
     const slotCount = paged ? MAX : total;
     const cfg = (slot) => {
-      if (slotCount >= MAX) return FAN[slot];
+      if (slotCount === 7) return FAN[slot];
       const c = slotCount >> 1, d = slotCount > 1 ? (slot - c) / c : 0, a = Math.abs(d);
       // few cards: spread them a bit wider than the 7-card fan
       return { rot: d * 12, scale: 1 - .16 * a * a, x: d * 21, y: a * a * 3.4, z: 10 - Math.abs(slot - c) };
