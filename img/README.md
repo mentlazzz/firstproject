@@ -1,19 +1,16 @@
 # Fotky pro web
 
-Web je připravený na vlastní fotky. Stačí sem nahrát soubory přesně s těmito názvy
-(JPG, ideálně na šířku, cca 1600–2400 px). Dokud tu fotka není, zobrazí se tmavá plocha s popiskem.
+Nahrajte sem soubory přesně s těmito názvy (JPG, na šířku, cca 1600–2400 px).
+Dokud fotka chybí, zobrazí se tmavá karta se zlatou ikonou.
 
 | Soubor | Kde se zobrazí |
 |---|---|
-| `hero.jpg` | Hlavní fotka nahoře (úvod) |
-| `sluzba-interier.jpg` | Karta služby: Čištění interiéru |
-| `sluzba-myti.jpg` | Karta služby: Ruční mytí s nano ochranou |
-| `sluzba-detailing.jpg` | Karta služby: Detailing |
-| `sluzba-vosk.jpg` | Karta služby: Konzervace a vosk |
-| `sluzba-winter.jpg` | Karta služby: Program Winter |
-| `sluzba-firmy.jpg` | Karta služby: Pro firmy |
-| `detailing.jpg` | Velký blok Detailing v ceníku |
-| `pred.jpg` + `po.jpg` | Porovnání před / po (stejný záběr, stejný ořez) |
-| `vosk.jpg` | Sekce Konzervace a vosk |
+| `hero.jpg` | Úvod vpravo — nahradí kresbu auta (ideálně tmavé auto na tmavém pozadí) |
+| `sluzba-interier.jpg` | Karta: Čištění interiéru |
+| `sluzba-myti.jpg` | Karta: Ruční mytí |
+| `sluzba-detailing.jpg` | Karta: Detailing |
+| `sluzba-winter.jpg` | Karta: Program Winter |
+| `sluzba-ozon.jpg` | Karta: Ozon & doplňky |
+| `pred.jpg` + `po.jpg` | Porovnání před / po (stejný záběr a ořez) |
 
-Logo: nahrajte `logo.svg` (nebo `.png`) a v `index.html` odkomentujte řádek s `<img src="img/logo.svg">`.
+`lesteni.jpg` je fotka leštění převzatá z carea.cz.

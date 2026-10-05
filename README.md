@@ -5,7 +5,9 @@ Statický web pro CAREA (ruční automyčka a čištění interiérů, Kralupy n
 - `index.html` — celý web (otevřete v prohlížeči)
 - `css/tokens.css` — design tokeny (primitive → semantic → component)
 - `css/styles.css` — vzhled
-- `js/main.js` — interakce a GSAP animace (ScrollTrigger)
+- `js/main.js` — interakce (kalendář, záložky, před/po) a GSAP animace
+- `js/vendor/` — GSAP 3 + ScrollTrigger + SplitText (lokálně, bez CDN)
+- `fonts/` — Archivo + Manrope (lokálně)
 - `img/` — sem nahrajte fotky, viz `img/README.md`
 
 Barvy se mění na jednom místě v `css/tokens.css` (např. zlatou za červenou CAREA: `--color-accent`).
