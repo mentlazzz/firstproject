@@ -1,0 +1,138 @@
+/* ==========================================================================
+   CAREA — design tokens
+   Three layers (ui-ux-pro-max / design-system skill):
+   Primitive (raw values) → Semantic (purpose) → Component (per component)
+   Components and layouts use only semantic/component tokens, never raw values.
+   ========================================================================== */
+
+:root {
+  /* ---------- 1. PRIMITIVE ---------- */
+  --prim-black-950: #070707;
+  --prim-black-900: #0c0c0d;
+  --prim-black-850: #111113;
+  --prim-black-800: #16161a;
+  --prim-black-700: #1f1f24;
+  --prim-black-600: #2a2a30;
+  --prim-grey-500: #6e6e78;
+  --prim-grey-400: #8f8f99;
+  --prim-grey-300: #b4b4bc;
+  --prim-white: #f4f1ea;
+
+  --prim-gold-300: #ecd29a;
+  --prim-gold-400: #dcb66b;
+  --prim-gold-500: #c99a45;
+  --prim-gold-600: #a67b31;
+  --prim-gold-700: #7a5a22;
+
+  --prim-red-500: #e10600;
+  --prim-green-500: #25d366;
+  --prim-green-600: #1eb157;
+
+  --prim-font-display: "Barlow Condensed", "Oswald", "Arial Narrow", sans-serif;
+  --prim-font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+
+  --prim-space-1: 4px;
+  --prim-space-2: 8px;
+  --prim-space-3: 12px;
+  --prim-space-4: 16px;
+  --prim-space-5: 24px;
+  --prim-space-6: 32px;
+  --prim-space-7: 48px;
+  --prim-space-8: 64px;
+  --prim-space-9: 96px;
+  --prim-space-10: 140px;
+
+  --prim-radius-0: 0;
+  --prim-radius-1: 2px;
+  --prim-radius-2: 6px;
+  --prim-radius-full: 999px;
+
+  --prim-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --prim-dur-fast: 180ms;
+  --prim-dur-base: 320ms;
+
+  /* ---------- 2. SEMANTIC ---------- */
+  --color-bg: var(--prim-black-900);
+  --color-bg-deep: var(--prim-black-950);
+  --color-surface: var(--prim-black-850);
+  --color-surface-raised: var(--prim-black-800);
+  --color-surface-hover: var(--prim-black-700);
+  --color-border: var(--prim-black-600);
+  --color-border-soft: rgba(244, 241, 234, .08);
+
+  --color-text: var(--prim-white);
+  --color-text-muted: var(--prim-grey-300);
+  --color-text-subtle: var(--prim-grey-400);
+  --color-text-faint: var(--prim-grey-500);
+  --color-text-on-accent: var(--prim-black-950);
+
+  --color-accent: var(--prim-gold-500);
+  --color-accent-strong: var(--prim-gold-400);
+  --color-accent-soft: var(--prim-gold-300);
+  --color-accent-deep: var(--prim-gold-700);
+  --color-accent-tint: rgba(201, 154, 69, .1);
+  --color-accent-line: rgba(201, 154, 69, .35);
+
+  --color-whatsapp: var(--prim-green-500);
+  --color-whatsapp-hover: var(--prim-green-600);
+  --color-star: var(--prim-gold-400);
+
+  --gradient-accent: linear-gradient(115deg, var(--prim-gold-300) 0%, var(--prim-gold-500) 45%, var(--prim-gold-600) 100%);
+
+  --font-display: var(--prim-font-display);
+  --font-body: var(--prim-font-body);
+
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+  --text-3xl: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
+  --text-hero: clamp(3.2rem, 1.6rem + 7.2vw, 8.4rem);
+
+  --tracking-label: .22em;
+  --tracking-display: .01em;
+
+  --space-gutter: clamp(16px, 4vw, 48px);
+  --space-section: clamp(var(--prim-space-8), 9vw, var(--prim-space-10));
+  --space-stack: var(--prim-space-5);
+  --container: 1240px;
+
+  --radius-sharp: var(--prim-radius-1);
+  --radius-soft: var(--prim-radius-2);
+  --radius-pill: var(--prim-radius-full);
+
+  --ease: var(--prim-ease-out);
+  --dur-fast: var(--prim-dur-fast);
+  --dur-base: var(--prim-dur-base);
+
+  --shadow-lift: 0 24px 60px -24px rgba(0, 0, 0, .8);
+  --shadow-glow: 0 0 0 1px var(--color-accent-line), 0 20px 50px -20px rgba(201, 154, 69, .35);
+
+  /* ---------- 3. COMPONENT ---------- */
+  --btn-primary-bg: var(--gradient-accent);
+  --btn-primary-fg: var(--color-text-on-accent);
+  --btn-ghost-border: var(--color-accent-line);
+  --btn-ghost-fg: var(--color-text);
+  --btn-height: 52px;
+  --btn-pad-x: 28px;
+
+  --nav-height: 76px;
+  --nav-bg: rgba(12, 12, 13, .82);
+
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border-soft);
+  --card-border-hover: var(--color-accent-line);
+  --card-pad: clamp(20px, 2.4vw, 32px);
+
+  --price-color: var(--color-accent-strong);
+  --label-color: var(--color-accent);
+
+  --photo-fallback: radial-gradient(120% 90% at 80% 10%, rgba(201, 154, 69, .16), transparent 55%),
+                    linear-gradient(160deg, var(--prim-black-700), var(--prim-black-950));
+
+  --input-bg: var(--color-bg-deep);
+  --input-border: var(--color-border);
+  --input-border-focus: var(--color-accent);
+}

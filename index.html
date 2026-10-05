@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAREA — ruční automyčka a čištění interiérů | Kralupy nad Vltavou</title>
+  <meta name="description" content="Hloubkové čištění interiéru, tepování a dezinfekce. Ruční mytí a nano ochrana laku. Kralupy nad Vltavou, Po–Ne 10:00–20:00. Odvoz a přívoz zdarma do 10 km.">
+  <meta name="theme-color" content="#0c0c0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 7 7l1.4-2.3L21 15.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5V4a1.5 1.5 0 0 1 3 0v6m0-4.5a1.5 1.5 0 0 1 3 0V11m0-3a1.5 1.5 0 0 1 3 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L3.3 15a1.6 1.6 0 0 1 2.5-2L7 14.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 14.5a3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 15.5V13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5v2.5a1 1 0 0 1-1 1h-1.2M5.2 16.5H4a1 1 0 0 1-1-1M9 16.5h6M4 12h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="16.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="16.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18M7 15h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-park" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 16.5v-9h3a2.6 2.6 0 0 1 0 5.2h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5 12 6l2.5-1.5M9.5 19.5 12 18l2.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-seat" viewBox="0 0 24 24"><path d="M8 3.5h5a2 2 0 0 1 2 2.2l-.8 7.3H18a2 2 0 0 1 2 2v1.5H8.5A2.5 2.5 0 0 1 6 14l.1-8.6A2 2 0 0 1 8 3.5zM9 16.5l-1 4M17 16.5l1 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5.5L13 3v18M13 9h7v12M3 21h18M7.5 8h2M7.5 12h2M7.5 16h2M16 13h1.5M16 17h1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10C7.2 7.7 9.4 5.9 12 5.9z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+<!-- ============ NAVIGACE ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="logo" href="#top" aria-label="CAREA — úvod">
+      <!-- Až budete mít logo v souboru: <img src="img/logo.svg" alt="CAREA" height="34"> -->
+      <span class="logo__mark">CAREA</span>
+      <span class="logo__sub">ruční mytí &amp; detailing</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Hlavní menu">
+      <a href="#programy">Programy</a>
+      <a href="#nano">Nano ochrana</a>
+      <a href="#doplnky">Doplňky</a>
+      <a href="#firmy">Pro firmy</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__phone" href="tel:+420703445294"><svg><use href="#i-phone"/></svg>+420 703 445 294</a>
+      <a class="btn btn--primary btn--sm" href="#objednat">Objednat termín</a>
+      <button class="nav__burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#programy">Programy</a>
+    <a href="#nano">Nano ochrana</a>
+    <a href="#doplnky">Doplňky</a>
+    <a href="#firmy">Pro firmy</a>
+    <a href="#kontakt">Kontakt</a>
+    <a class="mobile-menu__phone" href="tel:+420703445294">+420 703 445 294</a>
+  </div>
+</header>
+
+<main id="obsah">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__photo photo" data-photo="img/hero.jpg" data-label="Hlavní fotka — auto po čištění (img/hero.jpg)"></div>
+  <div class="hero__shade"></div>
+
+  <div class="hero__inner container">
+    <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span>Ruční automyčka a čištění interiérů — Kralupy nad Vltavou</p>
+
+    <h1 class="hero__title">
+      <span class="hero__row"><span class="hero__word">Interiér</span></span>
+      <span class="hero__row"><span class="hero__word">jako z</span></span>
+      <span class="hero__row"><span class="hero__word hero__word--gold">autosalonu.</span></span>
+    </h1>
+
+    <div class="hero__bottom">
+      <p class="hero__lead">Hloubkové čištění interiéru, tepování a&nbsp;dezinfekce. K&nbsp;tomu ruční mytí a&nbsp;nano ochrana laku. Detailingová kvalita za cenu, která vás nezruinuje.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="#objednat">Objednat termín <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="#programy">Prohlédnout ceník</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__facts container" aria-label="Rychlé informace">
+    <div class="fact">
+      <span class="fact__value"><svg class="fact__star"><use href="#i-star"/></svg><span data-count="5" data-decimals="1">5,0</span></span>
+      <span class="fact__label">hodnocení na Google</span>
+    </div>
+    <div class="fact">
+      <span class="fact__value">Po–Ne</span>
+      <span class="fact__label">otevřeno 10:00–20:00</span>
+    </div>
+    <div class="fact">
+      <span class="fact__value"><span data-count="10">10</span>&nbsp;km</span>
+      <span class="fact__label">odvoz a přívoz zdarma*</span>
+    </div>
+    <div class="fact">
+      <span class="fact__value">od <span data-count="500">500</span>&nbsp;Kč</span>
+      <span class="fact__label">ruční mytí s nano ochranou</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROČ CAREA ============ -->
+<section class="trust" aria-label="Proč CAREA">
+  <div class="container trust__grid">
+    <div class="trust__item"><svg><use href="#i-hand"/></svg><div><strong>Ručně, ne v lince</strong><span>Každé auto myjeme a čistíme ručně</span></div></div>
+    <div class="trust__item"><svg><use href="#i-drop"/></svg><div><strong>Nano ochrana v ceně mytí</strong><span>Vysokoodpudivý efekt proti nečistotám</span></div></div>
+    <div class="trust__item"><svg><use href="#i-car"/></svg><div><strong>Odvezeme a přivezeme</strong><span>K Premium a detailingu zdarma</span></div></div>
+    <div class="trust__item"><svg><use href="#i-card"/></svg><div><strong>Kartou i hotově</strong><span>Platební terminál na místě</span></div></div>
+    <div class="trust__item"><svg><use href="#i-park"/></svg><div><strong>Parkování zdarma</strong><span>Přímo v areálu, vjezd u CS Point</span></div></div>
+  </div>
+</section>
+
+<!-- ============ SLUŽBY ============ -->
+<section class="section services" id="sluzby">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__line"></span>Co pro vaše auto uděláme</p>
+        <h2 class="h2">Služby</h2>
+      </div>
+      <p class="section-head__note">Od rychlého vysátí po kompletní detailing interiéru i&nbsp;exteriéru. Přesnou cenu podle stavu vozu vám rádi upřesníme.</p>
+    </div>
+
+    <div class="services__grid">
+      <a class="svc reveal" href="#programy">
+        <div class="svc__photo photo" data-photo="img/sluzba-interier.jpg" data-label="Foto: čištění interiéru"></div>
+        <div class="svc__body">
+          <span class="svc__num">01</span>
+          <h3>Čištění interiéru</h3>
+          <p>Vysátí, plasty, skla, tepování sedadel i&nbsp;koberců, dezinfekce.</p>
+          <span class="svc__price">od 1&nbsp;190&nbsp;Kč <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#myti">
+        <div class="svc__photo photo" data-photo="img/sluzba-myti.jpg" data-label="Foto: ruční mytí"></div>
+        <div class="svc__body">
+          <span class="svc__num">02</span>
+          <h3>Ruční mytí s nano ochranou</h3>
+          <p>Venkovní mytí včetně nano vrstvy s&nbsp;vysokoodpudivým efektem.</p>
+          <span class="svc__price">od 500&nbsp;Kč <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#detailing">
+        <div class="svc__photo photo" data-photo="img/sluzba-detailing.jpg" data-label="Foto: detailing"></div>
+        <div class="svc__body">
+          <span class="svc__num">03</span>
+          <h3>Detailing — čištění vozu</h3>
+          <p>Nejvyšší úroveň péče o&nbsp;vůz — interiér i&nbsp;exteriér v&nbsp;jednom.</p>
+          <span class="svc__price">od 3&nbsp;990&nbsp;Kč <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#nano">
+        <div class="svc__photo photo" data-photo="img/sluzba-vosk.jpg" data-label="Foto: konzervace laku"></div>
+        <div class="svc__body">
+          <span class="svc__num">04</span>
+          <h3>Konzervace a vosk</h3>
+          <p>Ruční konzervace laku, ošetření plastů a&nbsp;lišt, impregnace skel.</p>
+          <span class="svc__price">cena na dotaz <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#winter">
+        <div class="svc__photo photo" data-photo="img/sluzba-winter.jpg" data-label="Foto: zimní příprava"></div>
+        <div class="svc__body">
+          <span class="svc__num">05</span>
+          <h3>Program Winter</h3>
+          <p>Připravíme vůz na mráz — kapaliny, těsnění, stěrače, baterie.</p>
+          <span class="svc__price">od 300&nbsp;Kč <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#firmy">
+        <div class="svc__photo photo" data-photo="img/sluzba-firmy.jpg" data-label="Foto: firemní vozy"></div>
+        <div class="svc__body">
+          <span class="svc__num">06</span>
+          <h3>Pro firmy a flotily</h3>
+          <p>Měsíční fakturace, přednostní termíny a&nbsp;sleva až 20&nbsp;%.</p>
+          <span class="svc__price">podmínky na míru <svg><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMY ============ -->
+<section class="section programs" id="programy">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Programy čištění interiéru</p>
+      <h2 class="h2">Vyberte si péči na&nbsp;míru</h2>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <header class="plan__head">
+          <h3 class="plan__name">Start</h3>
+          <p class="plan__time"><svg><use href="#i-clock"/></svg>45–60 minut</p>
+        </header>
+        <p class="plan__price"><span>1&nbsp;190</span> Kč</p>
+        <ul class="plan__list">
+          <li><svg><use href="#i-check"/></svg>Kompletní vysátí interiéru</li>
+          <li><svg><use href="#i-check"/></svg>Vyčištění plastů</li>
+          <li><svg><use href="#i-check"/></svg>Vyleštění vnitřních skel</li>
+          <li><svg><use href="#i-check"/></svg>Provonění interiéru</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#objednat" data-program="Start">Objednat Start</a>
+      </article>
+
+      <article class="plan plan--featured reveal">
+        <span class="plan__badge">Doporučujeme</span>
+        <header class="plan__head">
+          <h3 class="plan__name">Komfort</h3>
+          <p class="plan__time"><svg><use href="#i-clock"/></svg>2–3 hodiny</p>
+        </header>
+        <p class="plan__price"><span>1&nbsp;790</span> Kč</p>
+        <ul class="plan__list">
+          <li><svg><use href="#i-check"/></svg>Kompletní vysátí interiéru</li>
+          <li><svg><use href="#i-check"/></svg>Čištění plastů a palubní desky</li>
+          <li><svg><use href="#i-check"/></svg>Čištění všech vnitřních skel</li>
+          <li><svg><use href="#i-check"/></svg>Tepování sedadel</li>
+          <li><svg><use href="#i-check"/></svg>Vyčištění kufru</li>
+          <li><svg><use href="#i-check"/></svg>Provonění interiéru</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#objednat" data-program="Komfort">Objednat Komfort</a>
+      </article>
+
+      <article class="plan reveal">
+        <header class="plan__head">
+          <h3 class="plan__name">Premium</h3>
+          <p class="plan__time"><svg><use href="#i-car"/></svg>odvoz a přívoz zdarma</p>
+        </header>
+        <p class="plan__price"><span>2&nbsp;590</span> Kč</p>
+        <ul class="plan__list">
+          <li><svg><use href="#i-check"/></svg>Kompletní hloubkové čištění interiéru</li>
+          <li><svg><use href="#i-check"/></svg>Tepování sedadel</li>
+          <li><svg><use href="#i-check"/></svg>Tepování koberců</li>
+          <li><svg><use href="#i-check"/></svg>Čištění kufru</li>
+          <li><svg><use href="#i-check"/></svg>Čištění dveřních výplní</li>
+          <li><svg><use href="#i-check"/></svg>Ošetření plastů</li>
+          <li><svg><use href="#i-check"/></svg>Dezinfekce interiéru</li>
+          <li><svg><use href="#i-check"/></svg>Provonění interiéru</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#objednat" data-program="Premium">Objednat Premium</a>
+      </article>
+    </div>
+
+    <!-- Detailing -->
+    <article class="detailing reveal" id="detailing">
+      <div class="detailing__photo photo" data-photo="img/detailing.jpg" data-label="Foto: detailing (img/detailing.jpg)"></div>
+      <div class="detailing__body">
+        <p class="eyebrow"><span class="eyebrow__line"></span>Nejvyšší úroveň péče</p>
+        <h3 class="h2">Detailing — čištění vozu</h3>
+        <p class="detailing__lead">Nejvyšší úroveň péče o&nbsp;vůz — interiér i&nbsp;exteriér v&nbsp;jednom.</p>
+        <ul class="detailing__list">
+          <li>Vše z programu Premium</li>
+          <li>Venkovní čištění vozu s nano ochranou</li>
+          <li>Hloubkové čištění a impregnace kůže a plastů</li>
+          <li>Vyčištění spár ovládacích prvků</li>
+          <li>Oživení gumových částí</li>
+          <li>Vyčištění disků kol</li>
+          <li>Leštění skel</li>
+        </ul>
+        <div class="detailing__foot">
+          <p class="detailing__price"><small>od</small> 3&nbsp;990&nbsp;Kč</p>
+          <a class="btn btn--primary" href="#objednat" data-program="Detailing">Poptat detailing <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <p class="fineprint">Ceny platí pro osobní vozy. U dodávek a 7místných vozů je příplatek 20&nbsp;%. Přesnou cenu podle stavu vozu vám rádi upřesníme.</p>
+  </div>
+</section>
+
+<!-- ============ PŘED / PO ============ -->
+<section class="section beforeafter">
+  <div class="container ba">
+    <div class="ba__text">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Výsledek</p>
+      <h2 class="h2">Rozdíl uvidíte i&nbsp;ucítíte</h2>
+      <p class="ba__lead">Posuňte jezdcem a porovnejte stav před a po čištění.</p>
+    </div>
+    <div class="ba__frame" id="ba">
+      <div class="ba__img ba__img--after photo" data-photo="img/po.jpg" data-label="PO — img/po.jpg"></div>
+      <div class="ba__img ba__img--before photo" data-photo="img/pred.jpg" data-label="PŘED — img/pred.jpg"></div>
+      <span class="ba__tag ba__tag--before">Před</span>
+      <span class="ba__tag ba__tag--after">Po</span>
+      <div class="ba__handle" aria-hidden="true"><span></span></div>
+      <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Porovnání před a po">
+    </div>
+  </div>
+</section>
+
+<!-- ============ MYTÍ + WINTER + ODVOZ ============ -->
+<section class="section extras-main" id="myti">
+  <div class="container extras-main__grid">
+
+    <article class="wash reveal">
+      <div class="wash__head">
+        <svg class="wash__icon"><use href="#i-drop"/></svg>
+        <div>
+          <h3 class="h3">Venkovní mytí vozidla</h3>
+          <p>Včetně nano ochranné vrstvy s vysokoodpudivým efektem proti nečistotám.</p>
+        </div>
+      </div>
+      <dl class="pricerows">
+        <div><dt>Osobní vozidlo</dt><dd>500 Kč</dd></div>
+        <div><dt>SUV a dodávky</dt><dd>700 Kč</dd></div>
+      </dl>
+    </article>
+
+    <article class="winter reveal" id="winter">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Sezónní nabídka</p>
+      <div class="winter__top">
+        <h3 class="h2"><svg class="winter__icon"><use href="#i-snow"/></svg>Program Winter</h3>
+      </div>
+      <p class="winter__lead">Připravíme vůz na mráz — zkontrolujeme kapaliny, ošetříme těsnění a&nbsp;ověříme, že vás ráno nenechá na holičkách.</p>
+      <ul class="winter__list">
+        <li>Kontrola bodu tuhnutí chladicí kapaliny refraktometrem</li>
+        <li>Kontrola bodu tuhnutí kapaliny do ostřikovačů refraktometrem</li>
+        <li>Doplnění zimní kapaliny do ostřikovačů do 2&nbsp;l</li>
+        <li>Ošetření gumových těsnění proti přimrzání</li>
+        <li>Kontrola stěračů</li>
+        <li>Kontrola osvětlení vozidla</li>
+        <li>Vizuální kontrola hladin přístupných provozních kapalin</li>
+        <li>Vizuální kontrola pneumatik</li>
+        <li>Kontrola stavu akumulátoru včetně možnosti nabití</li>
+      </ul>
+      <dl class="pricerows pricerows--compact">
+        <div><dt>Samostatně</dt><dd>490 Kč</dd></div>
+        <div><dt>K programu čištění nebo mytí</dt><dd>300 Kč</dd></div>
+      </dl>
+      <p class="fineprint">Kontrola refraktometrem je orientační. Doplnění oleje ani chladicí kapaliny není v&nbsp;ceně, další kapalinu do ostřikovačů doplníme za příplatek podle spotřeby. Zimní kontrola nenahrazuje servisní prohlídku.</p>
+      <a class="btn btn--ghost" href="#objednat" data-program="Program Winter">Objednat Winter</a>
+    </article>
+
+    <article class="pickup reveal">
+      <svg class="pickup__icon"><use href="#i-car"/></svg>
+      <div>
+        <h3 class="h3">Odvezeme vás a zase přivezeme</h3>
+        <p>K programu Premium a k detailingu vás zdarma odvezeme domů nebo do práce a&nbsp;po dokončení zase přivezeme — v&nbsp;Kralupech a okolí do 10&nbsp;km od myčky.</p>
+        <p class="fineprint">Odvoz domluvíme při objednání termínu. Půjčení vozu nabízíme i samostatně.</p>
+      </div>
+      <a class="link-arrow" href="#objednat">Domluvit odvoz <svg><use href="#i-arrow"/></svg></a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ KONZERVACE A VOSK ============ -->
+<section class="section wax" id="nano">
+  <div class="container wax__grid">
+    <div class="wax__text reveal">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Péče o lak</p>
+      <h2 class="h2">Konzervace a&nbsp;vosk</h2>
+      <p class="wax__lead">Ruční konzervace laku, která vrátí barvě hloubku a přidá vrstvu navíc proti vodě a nečistotám. Vhodná i samostatně mezi mytími.</p>
+      <ul class="wax__list">
+        <li><svg><use href="#i-sparkle"/></svg>Konzervace laku po ručním mytí</li>
+        <li><svg><use href="#i-shield"/></svg>Ošetření plastů a lišt</li>
+        <li><svg><use href="#i-drop"/></svg>Impregnace skel — tekuté stěrače</li>
+      </ul>
+      <a class="btn btn--ghost" href="#objednat" data-program="Konzervace a vosk">Zeptat se na cenu</a>
+    </div>
+    <div class="wax__visual">
+      <div class="wax__photo photo" data-photo="img/vosk.jpg" data-label="Foto: leštění laku (img/vosk.jpg)" data-parallax></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOPLŇKY ============ -->
+<section class="section addons" id="doplnky">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Doplňky</p>
+      <h2 class="h2">Co ještě umíme</h2>
+    </div>
+    <div class="addons__grid">
+      <div class="addon reveal"><h3>Odstranění zvířecích chlupů</h3><p>Pečlivé odstranění zvířecích chlupů z čalounění a koberců.</p><span class="addon__price">400 Kč</span></div>
+      <div class="addon reveal"><h3>Ozonová dezinfekce</h3><p>Odstranění zápachu a bakterií ozonem.</p><span class="addon__price">500 Kč</span></div>
+      <div class="addon reveal"><h3>Silně znečištěný interiér</h3><p>Příplatek podle míry znečištění vozu.</p><span class="addon__price">od 300 Kč</span></div>
+      <div class="addon reveal"><h3>Dětská autosedačka</h3><p>Vyčištění a dezinfekce dětské autosedačky.</p><span class="addon__price">200 Kč</span></div>
+      <div class="addon reveal"><h3>Dodávka / 7místné vozidlo</h3><p>Příplatek za větší objem interiéru.</p><span class="addon__price">+20 %</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JAK TO PROBÍHÁ ============ -->
+<section class="section process">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Jak to probíhá</p>
+      <h2 class="h2">Čtyři kroky k&nbsp;čistému autu</h2>
+    </div>
+    <div class="steps-wrap">
+    <div class="steps__line" aria-hidden="true"><span></span></div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step__n">01</span><h3>Objednáte termín</h3><p>Telefonem, přes WhatsApp nebo formulářem. Na WhatsApp nám můžete poslat i fotku vozu.</p></li>
+      <li class="step reveal"><span class="step__n">02</span><h3>Přistavíte vůz</h3><p>Parkování přímo v areálu zdarma. K Premium a detailingu vás odvezeme domů nebo do práce.</p></li>
+      <li class="step reveal"><span class="step__n">03</span><h3>Probereme program</h3><p>Podíváme se na stav auta, doporučíme vhodný program a vyberete si vůni interiéru.</p></li>
+      <li class="step reveal"><span class="step__n">04</span><h3>Předáme hotové</h3><p>Při předání s vámi projdeme, že je hotové opravdu všechno. Zaplatíte kartou i hotově.</p></li>
+    </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRO FIRMY ============ -->
+<section class="fleet" id="firmy">
+  <div class="container fleet__grid">
+    <div class="fleet__text reveal">
+      <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span>Pro firmy a flotily</p>
+      <h2 class="h2">Flotilová spolupráce pro&nbsp;firmy</h2>
+      <p>Staráme se o firemní vozy, aby reprezentovaly — s&nbsp;podmínkami šitými na míru.</p>
+      <ul class="fleet__list">
+        <li><svg><use href="#i-check"/></svg>Měsíční fakturace</li>
+        <li><svg><use href="#i-check"/></svg>Přednostní termíny</li>
+        <li><svg><use href="#i-check"/></svg>Věrnostní bonus z obratu</li>
+      </ul>
+      <a class="btn btn--dark" href="#objednat" data-program="Firemní spolupráce">Poptat spolupráci <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="fleet__num">
+      <span class="fleet__pre">až</span>
+      <span class="fleet__big"><span data-count="20">20</span>%</span>
+      <span class="fleet__cap">množstevní sleva dle objemu</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENZE ============ -->
+<section class="section reviews" id="recenze">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__line"></span>Hodnocení zákazníků</p>
+        <h2 class="h2">Co o nás říkají na Google</h2>
+        <p class="section-head__sub">Reálné zkušenosti zákazníků po otevření naší provozovny v Kralupech nad Vltavou.</p>
+      </div>
+      <div class="gscore">
+        <svg class="gscore__g"><use href="#i-google"/></svg>
+        <div>
+          <span class="gscore__num">5,0<small>/5</small></span>
+          <span class="stars" aria-label="5 z 5 hvězd"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews__grid">
+      <figure class="review reveal">
+        <span class="review__quote" aria-hidden="true">„</span>
+        <blockquote>Škoda, že maximum je 5*. Auto si pán převzal ještě před otvírací dobou, vše s námi probral a nabídl nejvhodnější program. Za pár hodin bylo auto kompletně vyčištěno, interiér příjemně a nevtíravě voní – dostali jsme na výběr velkou škálu parfemace interiéru, což mě mile překvapilo. Při předání auta s námi pán ještě jednou prošel příjmový formulář, abychom měli jistotu, že je hotové opravdu vše. Rádi se budeme vracet 🙂</blockquote>
+        <figcaption>
+          <span class="review__avatar">M</span>
+          <span><strong>Martina Párová</strong><small>15. září 2026 · ověřená recenze Google</small></span>
+          <span class="stars stars--sm"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        </figcaption>
+      </figure>
+      <figure class="review reveal">
+        <span class="review__quote" aria-hidden="true">„</span>
+        <blockquote>Vřele doporučuji firmu Carea ruční mytí aut v Kralupech nad Vltavou. Velmi příjemná obsluha. Možnost výběru vůní. Velmi přijatelné ceny.</blockquote>
+        <figcaption>
+          <span class="review__avatar">K</span>
+          <span><strong>Karel Vondrák</strong><small>18. září 2026 · ověřená recenze Google</small></span>
+          <span class="stars stars--sm"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="reviews__actions">
+      <!-- Doplňte přímý odkaz na váš Google profil -->
+      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=CAREA+U+D%C3%BDh%C3%A1rny+1162+Kralupy+nad+Vltavou" target="_blank" rel="noopener">Napsat recenzi na Google</a>
+      <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=CAREA+U+D%C3%BDh%C3%A1rny+1162+Kralupy+nad+Vltavou" target="_blank" rel="noopener">Zobrazit profil a všechny recenze v Google Mapách <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OBJEDNÁVKA / KONTAKT ============ -->
+<section class="section booking" id="objednat">
+  <div class="container booking__grid" id="kontakt">
+    <div class="booking__info">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Kontakt</p>
+      <h2 class="h2">Stavte se k&nbsp;nám</h2>
+
+      <dl class="contact">
+        <div><dt><svg><use href="#i-pin"/></svg>Adresa</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=U+D%C3%BDh%C3%A1rny+1162%2C+278+01+Kralupy+nad+Vltavou" target="_blank" rel="noopener">U Dýhárny 1162, 278 01 Kralupy nad Vltavou</a></dd></div>
+        <div><dt><svg><use href="#i-clock"/></svg>Otevírací doba</dt><dd>Po–Ne 10:00–20:00</dd></div>
+        <div><dt><svg><use href="#i-card"/></svg>Platba</dt><dd>Kartou i hotově (platební terminál)</dd></div>
+        <div><dt><svg><use href="#i-park"/></svg>Parkování</dt><dd>Přímo v areálu zdarma (vjezd u CS Point)</dd></div>
+        <div><dt><svg><use href="#i-phone"/></svg>Telefon</dt><dd><a href="tel:+420703445294">+420 703 445 294</a></dd></div>
+        <div><dt><svg><use href="#i-wa"/></svg>WhatsApp</dt><dd><a href="https://wa.me/420703445294" target="_blank" rel="noopener">+420 703 445 294</a> <small>rychlé dotazy a foto vozu</small></dd></div>
+        <div><dt><svg><use href="#i-mail"/></svg>Rezervace</dt><dd><a href="mailto:rezervace@carea.cz">rezervace@carea.cz</a></dd></div>
+      </dl>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <h3 class="h3">Napište nám</h3>
+      <p class="form__sub">Nezávazná poptávka — ozveme se s termínem a cenou na míru.</p>
+
+      <div class="form__row">
+        <label class="field"><span>Jméno <i>*</i></span><input name="jmeno" type="text" autocomplete="name" required></label>
+        <label class="field"><span>E-mail <i>*</i></span><input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="form__row">
+        <label class="field"><span>Telefon</span><input name="telefon" type="tel" autocomplete="tel"></label>
+        <label class="field"><span>Program</span>
+          <select name="program" id="program">
+            <option value="">Vyberte (nepovinné)</option>
+            <option>Start</option>
+            <option>Komfort</option>
+            <option>Premium</option>
+            <option>Detailing</option>
+            <option>Venkovní mytí</option>
+            <option>Program Winter</option>
+            <option>Konzervace a vosk</option>
+            <option>Firemní spolupráce</option>
+          </select>
+        </label>
+      </div>
+      <label class="field"><span>Zpráva <i>*</i></span><textarea name="zprava" rows="5" required placeholder="Typ vozu, preferovaný termín, případně zájem o odvoz…"></textarea></label>
+
+      <button class="btn btn--primary" type="submit">Odeslat poptávku <svg><use href="#i-arrow"/></svg></button>
+      <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="form__legal">Odesláním formuláře berete na vědomí zpracování osobních údajů pro vyřízení poptávky. Více v <a href="#">Zásadách ochrany osobních údajů</a>.</p>
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="map">
+      <iframe title="Mapa — CAREA, U Dýhárny 1162, Kralupy nad Vltavou" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=U+D%C3%BDh%C3%A1rny+1162,+278+01+Kralupy+nad+Vltavou&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="container faq__grid">
+    <div class="section-head">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Časté dotazy</p>
+      <h2 class="h2">Než přijedete</h2>
+    </div>
+    <div class="faq__list">
+      <details class="qa">
+        <summary>Jak dlouho čištění trvá?<svg><use href="#i-plus"/></svg></summary>
+        <p>Program Start zabere 45–60 minut, Komfort 2–3 hodiny. U programu Premium a detailingu vám čas upřesníme podle stavu vozu — a mezitím vás zdarma odvezeme domů nebo do práce.</p>
+      </details>
+      <details class="qa">
+        <summary>Odvezete mě, než bude auto hotové?<svg><use href="#i-plus"/></svg></summary>
+        <p>Ano. K programu Premium a k detailingu vás zdarma odvezeme a po dokončení zase přivezeme — v Kralupech a okolí do 10 km od myčky. Odvoz domluvíme při objednání termínu. Půjčení vozu nabízíme i samostatně.</p>
+      </details>
+      <details class="qa">
+        <summary>Platí ceny i pro SUV, dodávky a 7místná auta?<svg><use href="#i-plus"/></svg></summary>
+        <p>Ceny programů platí pro osobní vozy. U dodávek a 7místných vozů je příplatek 20 %. Venkovní mytí SUV a dodávek stojí 700 Kč.</p>
+      </details>
+      <details class="qa">
+        <summary>Co je nano ochrana při mytí?<svg><use href="#i-plus"/></svg></summary>
+        <p>Každé venkovní mytí zahrnuje nano ochrannou vrstvu s vysokoodpudivým efektem proti nečistotám. Pro delší ochranu laku nabízíme ruční konzervaci a vosk.</p>
+      </details>
+      <details class="qa">
+        <summary>Jak můžu zaplatit a kde zaparkuji?<svg><use href="#i-plus"/></svg></summary>
+        <p>Platit můžete kartou i hotově (platební terminál). Parkování je zdarma přímo v areálu, vjezd je u CS Point.</p>
+      </details>
+      <details class="qa">
+        <summary>Nahrazuje Program Winter servisní prohlídku?<svg><use href="#i-plus"/></svg></summary>
+        <p>Ne. Zimní kontrola nenahrazuje servisní prohlídku a kontrola refraktometrem je orientační. Doplnění oleje ani chladicí kapaliny není v ceně.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PATIČKA ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <span class="logo__mark">CAREA</span>
+      <p>Ruční automyčka a čištění interiérů v Kralupech nad Vltavou.</p>
+    </div>
+    <div>
+      <h4>Služby</h4>
+      <a href="#programy">Programy čištění</a>
+      <a href="#detailing">Detailing</a>
+      <a href="#myti">Venkovní mytí</a>
+      <a href="#nano">Konzervace a vosk</a>
+      <a href="#doplnky">Doplňky</a>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <a href="tel:+420703445294">+420 703 445 294</a>
+      <a href="mailto:rezervace@carea.cz">rezervace@carea.cz</a>
+      <span>U Dýhárny 1162<br>278 01 Kralupy nad Vltavou</span>
+    </div>
+    <div>
+      <h4>Otevřeno</h4>
+      <span>Po–Ne 10:00–20:00</span>
+      <a class="btn btn--primary btn--sm footer__cta" href="#objednat">Objednat termín</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> CAREA</span>
+    <a href="#">Zásady ochrany osobních údajů</a>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/420703445294" target="_blank" rel="noopener" aria-label="Napsat na WhatsApp">
+  <svg><use href="#i-wa"/></svg><span>Napsat na WhatsApp</span>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
