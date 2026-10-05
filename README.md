@@ -6,4 +6,4 @@
 - `css/tokens.css` — design tokeny (primitive → semantic → component), písmo Jost
 - `css/styles.css` — vzhled
 - `js/main.js` — úvodní animace (GSAP)
-- `img/hero-bw.jpg` — hlavní fotka (dočasně z carea.cz, nahraďte vlastní fotkou tmavého auta)
+- `img/hero.jpg` — hlavní fotka úvodu

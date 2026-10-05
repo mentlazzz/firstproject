@@ -14,7 +14,7 @@
   if (!window.gsap || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-  tl.from('.hero__img', { scale: 1.12, opacity: 0, duration: 2.6, ease: 'power3.out' })
+  tl.fromTo('.hero__img', { scale: 1.14, opacity: 0 }, { scale: 1.04, opacity: 1, duration: 2.8, ease: 'power3.out' })
     .from('.nav > *', { opacity: 0, y: -12, duration: 1.2, stagger: .06 }, .3)
     .from('.hero__rule', { scaleX: 0, duration: 1.2 }, .5)
     .from('.hero__eyebrow', { opacity: 0, x: -10, duration: 1.2 }, .6)
